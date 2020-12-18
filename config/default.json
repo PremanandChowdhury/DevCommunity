@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://Prem:Prem@123@devcommunity.0xkkz.mongodb.net/DevCommunity?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://Prem:Prem@123@devcommunity.0xkkz.mongodb.net/DevCommunity?retryWrites=true&w=majority",
+    "jwtToken": "mysecretwebtoken"
 }

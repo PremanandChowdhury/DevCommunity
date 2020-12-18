@@ -30,7 +30,11 @@ router.post('/', [
     // See if user exists
     let user = await User.findOne({ email });
     if (user) {
-        return res.status(400).json({errors: [ {msg: 'User Already exists!'}] });
+        return res
+        .status(400)
+        .json( {
+            errors: [ {msg: 'User Already exists!'}] 
+        } );
     }
 
 
@@ -65,7 +69,7 @@ router.post('/', [
         }
     };
 
-    
+
     jwt.sign(
         payload, 
         config.get('jwtToken'),

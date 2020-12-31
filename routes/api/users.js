@@ -62,7 +62,7 @@ router.post('/', [
     await user.save();
 
 
-    // Return jsonwebtoken (to distinhuish user)
+    // Return jsonwebtoken (to distinguish user)
     const payload = {
         user: {
             id: user.id

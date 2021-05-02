@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://Prem:Prem@123@devcommunity.0xkkz.mongodb.net/DevCommunity?retryWrites=true&w=majority",
-  "jwtToken": "mysecretwebtoken"
+  "jwtToken": "mysecretwebtoken",
+  "githubClientId": "05174f3d19ffcc83ba29",
+  "githubSecret": "4207b3aa0c69b5d0c0831e61150490a54313522f"
 }

@@ -73,4 +73,32 @@ router.get('/:id', auth, async (req, res) => {
   }
 })
 
+// @route   DELETE api/posts/:id
+// @desc    Delete post by Id
+// @access  Private
+router.delete('/:id', auth, async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id)
+
+    if (!post) {
+      return res.status(404).json({ msg: 'Post not found' })
+    }
+
+    // Check for Valid user
+    if (post.user.toString() !== req.user.id) {
+      return res.status(401).json({ msg: 'User is unauthorized' })
+    }
+
+    await post.remove()
+
+    res.json({ msg: 'Post Removed' })
+  } catch (error) {
+    console.error(error.message)
+    if (error.kind === 'ObjectId') {
+      return res.status(404).json({ msg: 'Post not found' })
+    }
+    res.status(500).send('Server Error')
+  }
+})
+
 module.exports = router
